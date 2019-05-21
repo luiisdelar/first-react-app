@@ -7,6 +7,10 @@ class Navigation extends Component {
             <nav className="navbar navbar-dark bg-dark">
                 <a className="text-white">
                 { this.props.titulo }
+                <span className="badge badge-pill badge-light -ml-2">
+                { this.props.ntareas }
+                </span>
+                
                 </a>
             </nav>
         );

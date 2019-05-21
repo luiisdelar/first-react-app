@@ -1,0 +1,22 @@
+{
+    "todos": [
+        {
+            "title": "Task 1",
+            "responsible": "Luis",
+            "description": "None description now",
+            "priority": "Low"
+        },
+        {
+            "title": "Estudiar fisica",
+            "responsible": "Luis Ortega",
+            "description": "Si no querer raspar fisica 2 ha de estudiar",
+            "priority": "Alta"
+        },
+        {
+            "title": "Arreglar Canaima de Wilson",
+            "responsible": "Lalo",
+            "description": "Formatear mini lap",
+            "priority": "Medium"
+        }
+    ]
+}
