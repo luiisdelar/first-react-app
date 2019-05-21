@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navigation from './components/navigation';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <nav className="navbar navbar-dark bg-dark">
-            <a className="text-white">Titulo</a>
-          </nav>
-          <img src={logo} className="App-logo" alt="logo" />
+        <Navigation titulo="El titulo"/>
+        <img src={logo} className="App-logo" alt="logo" />
 
       </div>
     );
