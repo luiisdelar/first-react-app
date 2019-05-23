@@ -17,6 +17,12 @@
             "responsible": "Lalo",
             "description": "Formatear mini lap",
             "priority": "Medium"
+        },
+        {
+            "title": "Jugar futbol",
+            "responsible": "Yo pues quien mas",
+            "description": "Correr, patear, etc...",
+            "priority": "Medium"
         }
     ]
 }

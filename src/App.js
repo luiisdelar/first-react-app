@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Navigation from './components/navigation';
+import TareaForm from './components/TareaForm';
 import { todos } from './todos.json';
 //console.log(todos);
 
@@ -12,12 +13,27 @@ class App extends Component {
         this.state={
             todos: todos    
         }
+
+        this.manejaTarea = this.manejaTarea.bind(this);
   }
   
+  manejaTarea(tarea){
+    this.setState({
+      todos: [...this.state.todos,tarea]
+    })
+  }
+
+  borraTarea(indice){
+      this.setState({
+        todos: this.state.todos.filter((e,i)=>{
+          return i !== indice
+        })
+      })
+  }
     render() {
       const informacion = this.state.todos.map((todo,i) => {
         return (
-          <div className="col-md-4">
+          <div className="col-md-4" key={i}>
           <div className="card mt-4">
              <div className="card-header">
                 <h3>{ todo.title }</h3>
@@ -29,6 +45,9 @@ class App extends Component {
                 <p>{ todo.description }</p>
                 <p>{ todo.responsible }</p>
              </div>
+             <div className="card-footer">
+                <button className="btn btn-danger" onClick={ this.borraTarea.bind(this,i) }>Delete</button>
+             </div>
           </div>
           </div>
         )
@@ -38,15 +57,21 @@ class App extends Component {
           <div className="App">
             <Navigation titulo="El titulo" ntareas={this.state.todos.length}/>
             
-            
-            
             <div className="container">
               <div className="row">
-                { informacion }
+                <div className="col-md-4 mt-4">
+                  <TareaForm onAggTarea={ this.manejaTarea }/>
+                  <img src={logo} className="App-logo" alt="logo" />
+                </div>
+                <div className="col-md-8">
+                  <div className="row">
+                    { informacion }
+                  </div>
+                </div>
               </div>
             </div>
             
-            <img src={logo} className="App-logo" alt="logo" />
+            
 
           </div>
         );
